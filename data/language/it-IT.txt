@@ -573,7 +573,7 @@ STR_0568    :
 STR_0569    :I passeggeri, cinti da speciali imbracature al di sotto il tracciato, sperimentano la sensazione del volo quando vengono fatti oscillare nell'aria
 STR_0570    :
 STR_0571    :Circular cars spin around as they travel along the zig-zagging wooden track
-STR_0572    :Large capacity boats travel along a wide water channel, propelled up slopes by a conveyer belt, accelerating down steep slopes to soak the riders with a gaint splash
+STR_0572    :Large capacity boats travel along a wide water channel, propelled up slopes by a conveyor belt, accelerating down steep slopes to soak the riders with a giant splash
 STR_0573    :Powered helicoper shaped cars running on a steel track, controlled by the pedalling of the riders
 STR_0574    :Riders are held in special harnesses in a lying-down position, travlling through twisted track and inversions either on their backs or facing the ground
 STR_0575    :Dei treni elettrici sospesi sotto una singola rotaia trasportano i passeggeri per tutto il parco
