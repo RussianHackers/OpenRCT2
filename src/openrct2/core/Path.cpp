@@ -122,11 +122,14 @@ namespace Path
         path = GetFileName(path);
 
         const utf8 * lastDot = nullptr;
+        const utf8 * secondToLastDot = nullptr;
         const utf8 * ch = path;
         for (; *ch != '\0'; ch++)
         {
             if (*ch == '.')
             {
+				if (lastDot != nullptr)
+					secondToLastDot = lastDot;
                 lastDot = ch;
             }
         }
@@ -136,6 +139,13 @@ namespace Path
             return String::Set(buffer, bufferSize, path);
         }
 
+		// Checks if the file extension was either ".TD6" or ".TD4"; if so, run a loop removing everything after the first dot.
+        if ((secondToLastDot != nullptr) &&
+            (*(lastDot + 1) == 't' || *(lastDot + 1) == 'T') &&
+            (*(lastDot + 2) == 'd' || *(lastDot + 2) == 'D') &&
+            (*(lastDot + 3) == '4' || *(lastDot + 3) == '6'))
+            lastDot = secondToLastDot;
+        
         size_t truncatedLength = Math::Min<size_t>(bufferSize - 1, lastDot - path);
         Memory::Copy(buffer, path, truncatedLength);
         buffer[truncatedLength] = '\0';

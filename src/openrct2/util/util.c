@@ -134,14 +134,8 @@ void path_remove_extension(utf8 *path)
 {
 	// Find last dot in filename, and replace it with a null-terminator
 	char *lastDot = strrchr(path_get_filename(path), '.');
-    if (lastDot != NULL){ 
-    *lastDot = '\0';
-    // Checks if the file extension was either ".TD6" or ".TD4"; if so, run a loop removing everything after the first dot.
-    if((*(lastDot + 1) == 't' || *(lastDot + 1) == 'T') &&
-       (*(lastDot + 2) == 'd' || *(lastDot + 2) == 'D') &&
-       (*(lastDot + 3) == '4' || *(lastDot + 3) == '6'))
-        while((lastDot = strrchr(path_get_filename(path), '.')) != NULL) *lastDot = '\0'; 
-    } 
+    if (lastDot != NULL)
+		*lastDot = '\0';
 	else
 		log_warning("No extension found. (path = %s)", path);
 }
